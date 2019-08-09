@@ -53,4 +53,9 @@ type ServerResponse struct {
 
 // handle notifications and other communications with the hentai@home server
 type ServerHandler struct {
+	client *HentaiAtHomeClient
+}
+
+func NewServerHandler(c *HentaiAtHomeClient) *ServerHandler {
+	return &ServerHandler{c}
 }

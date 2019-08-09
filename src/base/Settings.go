@@ -37,7 +37,8 @@ var rpcServers []string
 var rpcServerCurrent, rpcServerLastFailed string
 
 var clientKey string
-var clientID, serverTimeDelta int
+var clientID, serverTimeDelta, clientPort int
+var activeClient *HentaiAtHomeClient
 
 func GetRPCServerHost() string {
 	rpcServerLock.Lock()
@@ -79,4 +80,11 @@ func GetRPCServerHost() string {
 	}
 
 	return rpcServerCurrent
+}
+func SetActiveClient(c *HentaiAtHomeClient) {
+	activeClient = c
+}
+
+func GetClientPort() int {
+	return clientPort
 }

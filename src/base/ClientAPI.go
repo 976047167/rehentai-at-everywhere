@@ -28,3 +28,8 @@ func (r ClientAPIResult) String() string {
 type ClientAPI struct {
 	client *HentaiAtHomeClient
 }
+
+func NewClientAPI(c *HentaiAtHomeClient) *ClientAPI {
+	this := ClientAPI{c}
+	return &this
+}
